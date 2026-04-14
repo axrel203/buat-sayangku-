@@ -69,13 +69,13 @@ export default function ClientLovePage({ name }: { name: string }) {
                   Dari sekian banyak hal yang nggak pasti, kamu jadi salah satu hal yang selalu aku syukuri.
                 </p>
                 <p className="text-lg md:text-xl font-sans leading-relaxed text-gray-300">
-                  Aku tau aku belum sempurna, tapi aku selalu pengen jadi alasan kamu tetap tersenyum setiap hari.
+                  Aku tau aku belum sempurna, aku juga masih banyak kekurangan,aku juga belum bisa ngertiin kamu,belum bisa memahami perasaan mu tapi aku selalu pengen jadi alasan kamu tetap tersenyum setiap hari.
                 </p>
                 <p className="text-lg md:text-xl font-sans leading-relaxed text-gray-300">
-                  Kamu itu sederhana, tapi cara kamu bikin aku bahagia… luar biasa.
+                  aku syukur bisa sama mu dan aku tak pernah bosen denger ceritamu aku selalu menunggu kabar bahagia darimu ,aku juga syukur karena kamu nerima waktu itu dengan segala kekurangan yang aku miliki
                 </p>
                 <p className="text-lg md:text-xl font-sans leading-relaxed text-gray-300">
-                  Semoga bunga ini bisa mewakili sedikit dari apa yang aku rasain ke kamu 🌹❤️
+                  Semoga buket bunga yang ku kasih itu bisa mewakili sedikit dari apa yang aku rasain ke kamu 🌹❤️
                 </p>
               </div>
             </section>
@@ -85,26 +85,42 @@ export default function ClientLovePage({ name }: { name: string }) {
               <div className="relative w-full max-w-3xl mx-auto flex justify-center items-center">
                 
                 {/* Gambar 1 (Kiri) */}
-                <div className="relative z-10 -rotate-12 transform hover:rotate-0 hover:z-40 transition-all duration-500 hover:scale-110 w-40 h-56 md:w-64 md:h-80 rounded-xl overflow-hidden glass-panel shadow-xl border-4 border-black/80 p-2 bg-black/50">
+                <div className="relative z-10 -rotate-6 transform hover:rotate-0 hover:z-40 transition-all duration-500 hover:scale-105 w-48 h-64 md:w-72 md:h-96 rounded-xl overflow-hidden glass-panel shadow-xl border-4 border-black/80 p-2 bg-black/50 mx-2 md:mx-4">
                   <div className="relative w-full h-full rounded-lg overflow-hidden">
                     <Image src="/gallery1.png" alt="Dark Red Rose" fill className="object-cover" />
                   </div>
                 </div>
                 
-                {/* Gambar 2 (Tengah) */}
-                <div className="relative z-20 rotate-0 transform hover:-rotate-2 hover:z-40 transition-all duration-500 hover:scale-110 w-48 h-64 md:w-72 md:h-96 rounded-xl overflow-hidden glass-panel shadow-2xl border-4 border-black/80 p-2 bg-black/80 -ml-12 md:-ml-16 mt-16 md:mt-24">
-                  <div className="relative w-full h-full rounded-lg overflow-hidden">
-                    <Image src="/gallery2.png" alt="Romantic Bouquet" fill className="object-cover" />
-                  </div>
-                </div>
-                
-                {/* Gambar 3 (Kanan) */}
-                <div className="relative z-10 rotate-12 transform hover:rotate-0 hover:z-40 transition-all duration-500 hover:scale-110 w-40 h-56 md:w-64 md:h-80 rounded-xl overflow-hidden glass-panel shadow-xl border-4 border-black/80 p-2 bg-black/50 -ml-12 md:-ml-16">
+                {/* Gambar 2 (Kanan) */}
+                <div className="relative z-10 rotate-6 transform hover:rotate-0 hover:z-40 transition-all duration-500 hover:scale-105 w-48 h-64 md:w-72 md:h-96 rounded-xl overflow-hidden glass-panel shadow-xl border-4 border-black/80 p-2 bg-black/50 mx-2 md:mx-4">
                   <div className="relative w-full h-full rounded-lg overflow-hidden">
                     <Image src="/gallery3.png" alt="Starry Night Rose" fill className="object-cover" />
                   </div>
                 </div>
 
+              </div>
+            </section>
+
+            {/* Behind the Scene Segment */}
+            <section className="fade-in py-12 md:py-16 space-y-10 text-center relative max-w-4xl mx-auto px-4 z-10">
+              <div className="glass-panel p-6 md:p-8 rounded-2xl border border-red-900/30 shadow-lg inline-block mx-auto max-w-2xl bg-black/30 backdrop-blur-sm">
+                <p className="text-xl md:text-2xl font-serif text-gray-200 leading-relaxed italic">
+                  "aku gak tau ini foto kapan yang pasti ini foto pas aku buat website nya"
+                </p>
+              </div>
+              
+              <div className="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-12 pt-4">
+                <div className="relative z-10 transform -rotate-2 hover:-translate-y-2 hover:rotate-0 transition-all duration-500 w-[280px] h-[280px] md:w-[320px] md:h-[320px] rounded-xl overflow-hidden glass-panel shadow-2xl border-4 border-black/80 p-2 bg-black/50">
+                  <div className="relative w-full h-full rounded-lg overflow-hidden">
+                    <Image src="/making_web_1.jpg" alt="Making the website 1" fill sizes="(max-width: 768px) 280px, 320px" className="object-cover" />
+                  </div>
+                </div>
+                
+                <div className="relative z-10 transform rotate-2 hover:-translate-y-2 hover:rotate-0 transition-all duration-500 w-[280px] h-[280px] md:w-[320px] md:h-[320px] rounded-xl overflow-hidden glass-panel shadow-2xl border-4 border-black/80 p-2 bg-black/50">
+                  <div className="relative w-full h-full rounded-lg overflow-hidden">
+                    <Image src="/making_web_2.png" alt="Making the website 2" fill sizes="(max-width: 768px) 280px, 320px" className="object-cover" />
+                  </div>
+                </div>
               </div>
             </section>
 
