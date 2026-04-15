@@ -5,6 +5,9 @@ import Image from 'next/image';
 
 export default function ClientLovePage({ name }: { name: string }) {
   const [isOpen, setIsOpen] = useState(false);
+  const [isPasswordModalOpen, setIsPasswordModalOpen] = useState(false);
+  const [passwordInput, setPasswordInput] = useState("");
+  const [passwordError, setPasswordError] = useState("");
   const audioRef = useRef<HTMLAudioElement>(null);
 
   const capitalizeWords = (str: string) => {
@@ -13,7 +16,23 @@ export default function ClientLovePage({ name }: { name: string }) {
 
   const displayName = capitalizeWords(name);
 
-  const handleOpen = () => {
+  const handleOpenClick = () => {
+    setIsPasswordModalOpen(true);
+    setPasswordInput("");
+    setPasswordError("");
+  };
+
+  const handlePasswordSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (passwordInput.toLowerCase().trim() === 'desember') {
+      setIsPasswordModalOpen(false);
+      openLetter();
+    } else {
+      setPasswordError("Sandi salah, coba ingat lagi sayang 🥺");
+    }
+  };
+
+  const openLetter = () => {
     setIsOpen(true);
     if (audioRef.current) {
       audioRef.current.volume = 0.5;
@@ -35,18 +54,55 @@ export default function ClientLovePage({ name }: { name: string }) {
       {/* BEFORE OPENING (ENVELOPE / HERO) */}
       {!isOpen && (
         <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center z-10 glass-panel fade-in">
-          <div className="max-w-md mx-auto space-y-8">
+          <div className="max-w-md mx-auto space-y-8 w-full">
             <h1 className="text-4xl md:text-6xl font-script text-red-500 fade-in-delayed">Hai {displayName} 😊</h1>
             <p className="text-lg md:text-xl font-sans text-gray-300 fade-in-slow">Ada sesuatu yang spesial buat kamu...</p>
             
-            <div className="fade-in-slow">
-              <button 
-                onClick={handleOpen}
-                className="mt-12 px-8 py-4 bg-red-900/80 hover:bg-red-800 text-red-100 rounded-full font-serif text-xl border border-red-500/30 transition-all duration-500 hover:scale-105 heartbeat shadow-[0_0_20px_rgba(139,0,0,0.5)]"
-              >
-                Buka Suratnya 💌
-              </button>
-            </div>
+            {!isPasswordModalOpen ? (
+              <div className="fade-in-slow">
+                <button 
+                  onClick={handleOpenClick}
+                  className="mt-12 px-8 py-4 bg-red-900/80 hover:bg-red-800 text-red-100 rounded-full font-serif text-xl border border-red-500/30 transition-all duration-500 hover:scale-105 heartbeat shadow-[0_0_20px_rgba(139,0,0,0.5)]"
+                >
+                  Buka Suratnya 💌
+                </button>
+              </div>
+            ) : (
+              <div className="fade-in mt-8 bg-black/60 p-6 md:p-8 rounded-2xl border border-red-900/50 shadow-2xl backdrop-blur-md">
+                <h2 className="text-2xl font-serif text-red-400 mb-6">nama bulan jadian kita sayang🥰</h2>
+                <form onSubmit={handlePasswordSubmit} className="flex flex-col gap-4">
+                  <input 
+                    type="password"
+                    value={passwordInput}
+                    onChange={(e) => {
+                      setPasswordInput(e.target.value);
+                      setPasswordError("");
+                    }}
+                    placeholder="Masukkan sandi..."
+                    className="w-full px-4 py-3 rounded-xl bg-black/50 border border-red-900/50 text-white placeholder-gray-500 focus:outline-none focus:border-red-500 transition-colors text-center font-sans tracking-widest"
+                    autoFocus
+                  />
+                  {passwordError && (
+                    <p className="text-red-500 text-sm">{passwordError}</p>
+                  )}
+                  <div className="flex gap-3 mt-2">
+                    <button 
+                      type="button"
+                      onClick={() => setIsPasswordModalOpen(false)}
+                      className="flex-1 py-3 px-4 rounded-xl border border-red-900/50 text-gray-300 hover:bg-red-950/30 hover:text-white transition-colors font-sans"
+                    >
+                      Batal
+                    </button>
+                    <button 
+                      type="submit"
+                      className="flex-1 py-3 px-4 rounded-xl bg-red-900 hover:bg-red-800 text-white transition-colors font-sans"
+                    >
+                      Buka
+                    </button>
+                  </div>
+                </form>
+              </div>
+            )}
           </div>
         </div>
       )}
