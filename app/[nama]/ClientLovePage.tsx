@@ -124,6 +124,27 @@ export default function ClientLovePage({ name }: { name: string }) {
               </div>
             </section>
 
+            {/* Waktu Itu Terus Segment */}
+            <section className="fade-in py-12 md:py-16 space-y-8 text-center relative max-w-4xl mx-auto px-4 z-10">
+              <h3 className="text-4xl md:text-5xl font-script text-red-500 drop-shadow-lg">
+                waktu itu
+              </h3>
+              
+              <div className="flex justify-center items-center pt-4">
+                <div className="relative z-10 transform hover:-translate-y-2 transition-all duration-500 w-[300px] md:w-[350px] aspect-[9/16] rounded-xl overflow-hidden glass-panel shadow-2xl border-4 border-black/80 p-2 bg-black/50">
+                  <div className="relative w-full h-full rounded-lg overflow-hidden flex items-center justify-center bg-black/50">
+                    <Image src="/wa_chat.jpg" alt="Waktu itu" fill className="object-cover" />
+                  </div>
+                </div>
+              </div>
+
+              <div className="glass-panel p-6 md:p-8 rounded-2xl border border-red-900/30 shadow-lg inline-block mx-auto max-w-2xl bg-black/30 backdrop-blur-sm mt-8">
+                <p className="text-lg md:text-xl font-sans text-gray-200 leading-relaxed italic">
+                  "maaf ya sayang kalo lama,maaf juga karna bukan aku langsung yang ngasih"
+                </p>
+              </div>
+            </section>
+
             {/* 3. Penutup & Action */}
             <section className="text-center space-y-12 pb-20 fade-in">
               <h3 className="text-4xl md:text-6xl font-script text-red-500">Aku harap kamu suka ya 🌹</h3>
