@@ -5,14 +5,14 @@
   --font-serif: var(--font-playfair);
   --font-script: var(--font-great-vibes);
   
-  --color-dark-red: #3b0000;
-  --color-primary-red: #8b0000;
-  --color-deep-black: #0a0a0a;
+  --color-dark-brown: #3E2723;
+  --color-primary-brown: #A67B5B;
+  --color-deep-black: #1A110E;
 }
 
 :root {
-  --background: #0a0a0a;
-  --foreground: #fcfcfc;
+  --background: #1A110E;
+  --foreground: #F5E6DA;
 }
 
 html,
@@ -26,10 +26,10 @@ body {
 
 /* Custom Utilities & Animations */
 .glass-panel {
-  background: rgba(40, 0, 0, 0.4);
+  background: rgba(92, 61, 46, 0.2);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 0, 0, 0.1);
+  border: 1px solid rgba(200, 155, 123, 0.2);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
 }
 
@@ -68,7 +68,7 @@ body {
     transform: scale(1);
   }
   50% {
-    transform: scale(1.1);
+    transform: scale(1.05);
   }
 }
 
@@ -77,12 +77,12 @@ body {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #0a0a0a;
+  background: #1A110E;
 }
 ::-webkit-scrollbar-thumb {
-  background: #3b0000;
+  background: #5C3D2E;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #8b0000;
+  background: #A67B5B;
 }
