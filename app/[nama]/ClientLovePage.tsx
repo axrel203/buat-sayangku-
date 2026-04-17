@@ -8,6 +8,7 @@ export default function ClientLovePage({ name }: { name: string }) {
   const [isPasswordModalOpen, setIsPasswordModalOpen] = useState(false);
   const [passwordInput, setPasswordInput] = useState("");
   const [passwordError, setPasswordError] = useState("");
+  const [zoomedImage, setZoomedImage] = useState<string | null>(null);
   const audioRef = useRef<HTMLAudioElement>(null);
 
   const capitalizeWords = (str: string) => {
@@ -48,6 +49,29 @@ export default function ClientLovePage({ name }: { name: string }) {
 
   return (
     <main className="min-h-screen bg-[#1A110E] text-[#F5E6DA] relative overflow-hidden">
+      {/* ZOOM MODAL */}
+      {zoomedImage && (
+        <div 
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4 cursor-zoom-out fade-in"
+          onClick={() => setZoomedImage(null)}
+        >
+          <div className="relative w-full h-full max-w-5xl max-h-[90vh]">
+            <Image 
+              src={zoomedImage} 
+              alt="Zoomed" 
+              fill 
+              className="object-contain" 
+            />
+          </div>
+          <button 
+            className="absolute top-6 right-6 text-white bg-black/50 p-2 rounded-full hover:bg-black/80 transition-colors"
+            onClick={(e) => { e.stopPropagation(); setZoomedImage(null); }}
+          >
+            <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+          </button>
+        </div>
+      )}
+
       {/* Invisible Audio Element */}
       <audio ref={audioRef} src="/audio.mpeg" loop />
 
@@ -142,14 +166,14 @@ export default function ClientLovePage({ name }: { name: string }) {
                 
                 {/* Gambar 1 (Kiri) */}
                 <div className="relative z-10 -rotate-6 transform hover:rotate-0 hover:z-40 transition-all duration-500 hover:scale-105 w-48 h-64 md:w-72 md:h-96 rounded-xl overflow-hidden glass-panel shadow-xl border-4 border-[#0F0907]/80 p-2 bg-[#0F0907]/50 mx-2 md:mx-4">
-                  <div className="relative w-full h-full rounded-lg overflow-hidden">
+                  <div className="relative w-full h-full rounded-lg overflow-hidden cursor-zoom-in" onClick={() => setZoomedImage("/gallery1_brown.png")}>
                     <Image src="/gallery1_brown.png" alt="Dark Red Rose" fill className="object-cover" />
                   </div>
                 </div>
                 
                 {/* Gambar 2 (Kanan) */}
                 <div className="relative z-10 rotate-6 transform hover:rotate-0 hover:z-40 transition-all duration-500 hover:scale-105 w-48 h-64 md:w-72 md:h-96 rounded-xl overflow-hidden glass-panel shadow-xl border-4 border-[#0F0907]/80 p-2 bg-[#0F0907]/50 mx-2 md:mx-4">
-                  <div className="relative w-full h-full rounded-lg overflow-hidden">
+                  <div className="relative w-full h-full rounded-lg overflow-hidden cursor-zoom-in" onClick={() => setZoomedImage("/gallery3_brown.png")}>
                     <Image src="/gallery3_brown.png" alt="Starry Night Rose" fill className="object-cover" />
                   </div>
                 </div>
@@ -167,13 +191,13 @@ export default function ClientLovePage({ name }: { name: string }) {
               
               <div className="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-12 pt-4">
                 <div className="relative z-10 transform -rotate-2 hover:-translate-y-2 hover:rotate-0 transition-all duration-500 w-[280px] h-[280px] md:w-[320px] md:h-[320px] rounded-xl overflow-hidden glass-panel shadow-2xl border-4 border-[#0F0907]/80 p-2 bg-[#0F0907]/50">
-                  <div className="relative w-full h-full rounded-lg overflow-hidden">
+                  <div className="relative w-full h-full rounded-lg overflow-hidden cursor-zoom-in" onClick={() => setZoomedImage("/making_web_1.jpg")}>
                     <Image src="/making_web_1.jpg" alt="Making the website 1" fill sizes="(max-width: 768px) 280px, 320px" className="object-cover" />
                   </div>
                 </div>
                 
                 <div className="relative z-10 transform rotate-2 hover:-translate-y-2 hover:rotate-0 transition-all duration-500 w-[280px] h-[280px] md:w-[320px] md:h-[320px] rounded-xl overflow-hidden glass-panel shadow-2xl border-4 border-[#0F0907]/80 p-2 bg-[#0F0907]/50">
-                  <div className="relative w-full h-full rounded-lg overflow-hidden">
+                  <div className="relative w-full h-full rounded-lg overflow-hidden cursor-zoom-in" onClick={() => setZoomedImage("/making_web_2.png")}>
                     <Image src="/making_web_2.png" alt="Making the website 2" fill sizes="(max-width: 768px) 280px, 320px" className="object-cover" />
                   </div>
                 </div>
@@ -188,7 +212,7 @@ export default function ClientLovePage({ name }: { name: string }) {
               
               <div className="flex justify-center items-center pt-4">
                 <div className="relative z-10 transform hover:-translate-y-2 transition-all duration-500 w-[300px] md:w-[350px] aspect-[9/16] rounded-xl overflow-hidden glass-panel shadow-2xl border-4 border-[#0F0907]/80 p-2 bg-[#0F0907]/50">
-                  <div className="relative w-full h-full rounded-lg overflow-hidden flex items-center justify-center bg-black/50">
+                  <div className="relative w-full h-full rounded-lg overflow-hidden flex items-center justify-center bg-black/50 cursor-zoom-in" onClick={() => setZoomedImage("/wa_chat.jpg")}>
                     <Image src="/wa_chat.jpg" alt="Waktu itu" fill className="object-cover" />
                   </div>
                 </div>
@@ -197,6 +221,33 @@ export default function ClientLovePage({ name }: { name: string }) {
               <div className="glass-panel p-6 md:p-8 rounded-2xl border border-[#855731]/30 shadow-lg inline-block mx-auto max-w-2xl bg-[#0F0907]/30 backdrop-blur-sm mt-8">
                 <p className="text-lg md:text-xl font-sans text-[#F2E0CF] leading-relaxed italic">
                   "maaf ya sayang kalo lama,maaf juga karna bukan aku langsung yang ngasih"
+                </p>
+              </div>
+            </section>
+
+            {/* Kepikiran Terus Segment */}
+            <section className="fade-in py-12 md:py-16 space-y-8 text-center relative max-w-4xl mx-auto px-4 z-10">
+              <h3 className="text-4xl md:text-5xl font-script text-[#D4A373] drop-shadow-lg">
+                Maaf kalo aku kepikiran terus ya😊
+              </h3>
+              
+              <div className="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-12 pt-4">
+                <div className="relative z-10 transform -rotate-2 hover:-translate-y-2 hover:rotate-0 transition-all duration-500 w-[280px] md:w-[320px] aspect-[9/16] rounded-xl overflow-hidden glass-panel shadow-2xl border-4 border-[#0F0907]/80 p-2 bg-[#0F0907]/50">
+                  <div className="relative w-full h-full rounded-lg overflow-hidden flex items-center justify-center bg-black/50 text-[#855731] text-sm cursor-zoom-in" onClick={() => setZoomedImage("/chat_kepikiran_1.jpg")}>
+                    <Image src="/chat_kepikiran_1.jpg" alt="Chat 1" fill className="object-cover" />
+                  </div>
+                </div>
+                
+                <div className="relative z-10 transform rotate-2 hover:-translate-y-2 hover:rotate-0 transition-all duration-500 w-[280px] md:w-[320px] aspect-[9/16] rounded-xl overflow-hidden glass-panel shadow-2xl border-4 border-[#0F0907]/80 p-2 bg-[#0F0907]/50">
+                  <div className="relative w-full h-full rounded-lg overflow-hidden flex items-center justify-center bg-black/50 text-[#855731] text-sm cursor-zoom-in" onClick={() => setZoomedImage("/chat_kepikiran_2.jpg")}>
+                    <Image src="/chat_kepikiran_2.jpg" alt="Chat 2" fill className="object-cover" />
+                  </div>
+                </div>
+              </div>
+
+              <div className="glass-panel p-6 md:p-8 rounded-2xl border border-[#855731]/30 shadow-lg inline-block mx-auto max-w-2xl bg-[#0F0907]/30 backdrop-blur-sm mt-8">
+                <p className="text-lg md:text-xl font-sans text-[#F2E0CF] leading-relaxed italic whitespace-pre-line">
+                  "Aku selalu berusaha jadi yang terbaik buat kamu,{"\n"}dan aku pengen semua yang kamu mau… datangnya dari aku 🤍"
                 </p>
               </div>
             </section>
