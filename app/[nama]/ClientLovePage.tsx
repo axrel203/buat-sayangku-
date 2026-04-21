@@ -149,7 +149,7 @@ export default function ClientLovePage({ name }: { name: string }) {
                   Dari sekian banyak hal yang nggak pasti, kamu jadi salah satu hal yang selalu aku syukuri.
                 </p>
                 <p className="text-lg md:text-xl font-sans leading-relaxed text-[#E8D1BA]">
-                  Aku tau aku belum sempurna, aku juga masih banyak kekurangan,aku juga belum bisa ngertiin kamu,belum bisa memahami perasaan mu tapi aku selalu pengen jadi alasan kamu tetap tersenyum setiap hari.
+                  Aku tau aku belum sempurna, aku juga masih banyak kekurangan,aku juga belum bisa ngertiin kamu,belum bisa memahami perasaan mu,dan aku juga belum bisa jadi yang terbaik buat kamu,belum bisa ngasih ini itu buat mu😓 tapi aku selalu pengen jadi alasan kamu tetap tersenyum setiap hari.
                 </p>
                 <p className="text-lg md:text-xl font-sans leading-relaxed text-[#E8D1BA]">
                   aku syukur bisa sama mu dan aku tak pernah bosen denger ceritamu aku selalu menunggu kabar bahagia darimu ,aku juga syukur karena kamu nerima waktu itu dengan segala kekurangan yang aku miliki
@@ -157,6 +157,53 @@ export default function ClientLovePage({ name }: { name: string }) {
                 <p className="text-lg md:text-xl font-sans leading-relaxed text-[#E8D1BA]">
                   Semoga buket bunga yang ku kasih itu bisa mewakili sedikit dari apa yang aku rasain ke kamu 🤎✨
                 </p>
+              </div>
+            </section>
+
+            {/* Buket Spesial Segment */}
+            <section className="fade-in py-12 md:py-16 space-y-10 text-center relative max-w-4xl mx-auto px-4 z-10">
+              <h3 className="text-4xl md:text-5xl font-script text-[#D4A373] drop-shadow-lg">
+                Buket Spesial Untukmu 💐
+              </h3>
+              
+              <div className="flex flex-col md:flex-row justify-center items-center gap-10 md:gap-16 pt-4">
+                {/* Bouquet 1 */}
+                <div className="relative group">
+                  <div className="relative z-10 transform -rotate-3 group-hover:rotate-0 transition-all duration-500 w-[280px] h-[380px] md:w-[320px] md:h-[420px] bg-[#F5E6DA] p-3 shadow-[10px_10px_25px_rgba(0,0,0,0.5)] border border-[#D4A373]/30">
+                    <div className="relative w-full h-[85%] overflow-hidden cursor-zoom-in" onClick={() => setZoomedImage("/WhatsApp Image 2026-04-22 at 00.32.14.jpeg")}>
+                      <Image 
+                        src="/WhatsApp Image 2026-04-22 at 00.32.14.jpeg" 
+                        alt="Special Bouquet 1" 
+                        fill 
+                        className="object-cover transition-transform duration-700 group-hover:scale-110" 
+                      />
+                    </div>
+                    <div className="h-[15%] flex items-center justify-center">
+                      <p className="font-script text-2xl text-[#5C3D2E]">Cantik banget...</p>
+                    </div>
+                  </div>
+                  {/* Subtle offset shadow behind */}
+                  <div className="absolute top-4 left-4 w-full h-full bg-[#3E2723]/20 -rotate-3 group-hover:rotate-0 transition-all duration-500 -z-10 bg-opacity-40 blur-sm"></div>
+                </div>
+                
+                {/* Bouquet 2 */}
+                <div className="relative group">
+                  <div className="relative z-10 transform rotate-3 group-hover:rotate-0 transition-all duration-500 w-[280px] h-[380px] md:w-[320px] md:h-[420px] bg-[#F5E6DA] p-3 shadow-[10px_10px_25px_rgba(0,0,0,0.5)] border border-[#D4A373]/30">
+                    <div className="relative w-full h-[85%] overflow-hidden cursor-zoom-in" onClick={() => setZoomedImage("/WhatsApp Image 2026-04-22 at 00.32114.jpeg")}>
+                      <Image 
+                        src="/WhatsApp Image 2026-04-22 at 00.32114.jpeg" 
+                        alt="Special Bouquet 2" 
+                        fill 
+                        className="object-cover transition-transform duration-700 group-hover:scale-110" 
+                      />
+                    </div>
+                    <div className="h-[15%] flex items-center justify-center">
+                      <p className="font-script text-2xl text-[#5C3D2E]">Hanya untukmu 🤍</p>
+                    </div>
+                  </div>
+                  {/* Subtle offset shadow behind */}
+                  <div className="absolute top-4 right-4 w-full h-full bg-[#3E2723]/20 rotate-3 group-hover:rotate-0 transition-all duration-500 -z-10 bg-opacity-40 blur-sm"></div>
+                </div>
               </div>
             </section>
 
