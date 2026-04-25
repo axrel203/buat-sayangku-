@@ -213,15 +213,15 @@ export default function ClientLovePage({ name }: { name: string }) {
                 
                 {/* Gambar 1 (Kiri) */}
                 <div className="relative z-10 -rotate-6 transform hover:rotate-0 hover:z-40 transition-all duration-500 hover:scale-105 w-48 h-64 md:w-72 md:h-96 rounded-xl overflow-hidden glass-panel shadow-xl border-4 border-[#0F0907]/80 p-2 bg-[#0F0907]/50 mx-2 md:mx-4">
-                  <div className="relative w-full h-full rounded-lg overflow-hidden cursor-zoom-in" onClick={() => setZoomedImage("/gallery1_brown.png")}>
-                    <Image src="/gallery1_brown.png" alt="Dark Red Rose" fill className="object-cover" />
+                  <div className="relative w-full h-full rounded-lg overflow-hidden cursor-zoom-in" onClick={() => setZoomedImage("/ChatGPT Image 25 Apr 2026, 22.28.39.png")}>
+                    <Image src="/ChatGPT Image 25 Apr 2026, 22.28.39.png" alt="Dark Red Rose" fill className="object-cover" />
                   </div>
                 </div>
                 
                 {/* Gambar 2 (Kanan) */}
                 <div className="relative z-10 rotate-6 transform hover:rotate-0 hover:z-40 transition-all duration-500 hover:scale-105 w-48 h-64 md:w-72 md:h-96 rounded-xl overflow-hidden glass-panel shadow-xl border-4 border-[#0F0907]/80 p-2 bg-[#0F0907]/50 mx-2 md:mx-4">
-                  <div className="relative w-full h-full rounded-lg overflow-hidden cursor-zoom-in" onClick={() => setZoomedImage("/gallery3_brown.png")}>
-                    <Image src="/gallery3_brown.png" alt="Starry Night Rose" fill className="object-cover" />
+                  <div className="relative w-full h-full rounded-lg overflow-hidden cursor-zoom-in" onClick={() => setZoomedImage("/30df9ddd-3440-4231-9b33-b50c3b605d89 (1).png")}>
+                    <Image src="/30df9ddd-3440-4231-9b33-b50c3b605d89 (1).png" alt="Starry Night Rose" fill className="object-cover" />
                   </div>
                 </div>
 
